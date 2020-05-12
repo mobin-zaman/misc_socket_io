@@ -1,0 +1,20 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script>
+  const socket = io("http://localhost:8000");
+
+  console.log(socket);
+
+  socket.on("connect", (data) => {
+    socket.on("welcome", (message) => {
+      console.log(message);
+    });
+
+    socker.emit("message", {
+      data: " I am so exicited, it is full of abstraction, once again!",
+    });
+  });
+
+  ws.onmessage = (event) => {
+    console.log(event);
+  };
+</script>
